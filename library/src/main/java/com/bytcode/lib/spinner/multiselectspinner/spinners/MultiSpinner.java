@@ -79,7 +79,7 @@ public class MultiSpinner extends AppCompatSpinner implements OnMultiChoiceClick
 
     @Override
     public boolean performClick() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(getContext(), R.style.myDialog);
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         builder.setTitle(spinnerTitle);
         builder.setMultiChoiceItems(
                 items.toArray(new CharSequence[items.size()]), selected, this);
@@ -91,6 +91,14 @@ public class MultiSpinner extends AppCompatSpinner implements OnMultiChoiceClick
                         dialog.cancel();
                     }
                 });
+
+        builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int i) {
+                dialog.cancel();
+            }
+        });
         builder.setOnCancelListener(this);
         builder.show();
         return true;

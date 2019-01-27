@@ -3,7 +3,7 @@
     <style name="MaterialSpinner" parent="Widget.AppCompat.Spinner">
         <item name="rd_style">@style/Material.Drawable.Ripple.Wave.Light</item>
         <item name="spn_labelEnable">true</item>
-        <item name="spn_labelTextSize">18sp</item>
+        <item name="spn_labelTextSize">12sp</item>
         <item name="spn_arrowSwitchMode">true</item>
         <item name="spn_arrowAnimDuration">@android:integer/config_shortAnimTime</item>
         <item name="spn_arrowInterpolator">@android:anim/decelerate_interpolator</item>

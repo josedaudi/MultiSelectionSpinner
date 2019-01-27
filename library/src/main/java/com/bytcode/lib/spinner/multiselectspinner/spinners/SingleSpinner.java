@@ -108,7 +108,7 @@ public class SingleSpinner extends android.support.v7.widget.AppCompatSpinner im
 	@Override
 	public boolean performClick() {
 
-		builder = new AlertDialog.Builder(getContext(), R.style.myDialog);
+		builder = new AlertDialog.Builder(getContext());
 		builder.setTitle(spinnerTitle);
 
 		LayoutInflater inflater = (LayoutInflater) getContext().getSystemService( Context.LAYOUT_INFLATER_SERVICE );
@@ -134,6 +134,14 @@ public class SingleSpinner extends android.support.v7.widget.AppCompatSpinner im
 			public void onClick(DialogInterface dialog, int which) {
 
 				Log.i(TAG, " ITEMS : " + items.size() );
+				dialog.cancel();
+			}
+		});
+
+		builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener(){
+
+			@Override
+			public void onClick(DialogInterface dialog, int i) {
 				dialog.cancel();
 			}
 		});
@@ -237,8 +245,6 @@ public class SingleSpinner extends android.support.v7.widget.AppCompatSpinner im
 			});
 
 			if(data.isSelected()){
-				holder.textView.setTypeface(null, Typeface.BOLD);
-				holder.textView.setTextColor(Color.WHITE);
 				convertView.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.list_selected));
 			}
 			return convertView;

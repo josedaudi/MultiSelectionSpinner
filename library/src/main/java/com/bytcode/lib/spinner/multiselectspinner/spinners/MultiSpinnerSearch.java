@@ -125,7 +125,7 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
     @Override
     public boolean performClick() {
 
-        builder = new AlertDialog.Builder(getContext(), R.style.myDialog);
+        builder = new AlertDialog.Builder(getContext());
         builder.setTitle(spinnerTitle);
 
         final LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -165,6 +165,14 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
             public void onClick(DialogInterface dialog, int which) {
 
                 Log.i(TAG, " ITEMS : " + items.size());
+                dialog.cancel();
+            }
+        });
+
+        builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener(){
+
+            @Override
+            public void onClick(DialogInterface dialog, int i) {
                 dialog.cancel();
             }
         });
@@ -282,8 +290,6 @@ public class MultiSpinnerSearch extends AppCompatSpinner implements OnCancelList
                 }
             });
             if (data.isSelected()) {
-                holder.textView.setTypeface(null, Typeface.BOLD);
-                holder.textView.setTextColor(Color.WHITE);
                 convertView.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.list_selected));
             }
             holder.checkBox.setTag(holder);
