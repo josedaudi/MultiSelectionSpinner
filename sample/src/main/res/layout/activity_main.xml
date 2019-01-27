@@ -1,45 +1,169 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginBottom="10dp"
-    android:orientation="vertical">
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".controllers.activities.MainActivity">
 
-    <com.bytcode.lib.spinner.multiselectspinner.spinners.MultiSpinner
-        android:id="@+id/simpleMultiSpinner"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:visibility="gone"
-        app:hintText="Multi Selection" />
+    <RelativeLayout
+        android:id="@+id/searchMultiSpinnerUnlimitedLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/selector_background"
+        android:layout_margin="16dp"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <com.bytcode.lib.spinner.multiselectspinner.spinners.MultiSpinnerSearch
-        android:id="@+id/searchMultiSpinnerUnlimited"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        app:hintText="Multi Selection With Filter Without Limit" />
+        <com.bytcode.lib.spinner.multiselectspinner.spinners.MultiSpinnerSearch
+            android:id="@+id/searchMultiSpinnerUnlimited"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginEnd="40dp"
+            android:layout_marginRight="40dp"
+            android:background="@android:color/transparent"
+            app:hintText="Multi Selection With Filter Without Limit"
+            android:gravity="center"
+            android:spinnerMode="dialog"/>
 
-    <com.bytcode.lib.spinner.multiselectspinner.spinners.MultiSpinnerSearch
-        android:id="@+id/searchMultiSpinnerLimit"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        app:hintText="Multi Selection With Filter And Limit" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="end"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:contentDescription="@null"
+            app:srcCompat="@drawable/ic_angle_down"/>
 
-    <com.bytcode.lib.spinner.multiselectspinner.spinners.SingleSpinnerSearch
-        android:id="@+id/searchSingleSpinner"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        app:hintText="Single Selection With Filter" />
+    </RelativeLayout>
 
-    <com.bytcode.lib.spinner.multiselectspinner.spinners.SingleSpinner
-        android:id="@+id/singleSpinner"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        app:hintText="Single Selection" />
+    <RelativeLayout
+        android:id="@+id/searchMultiSpinnerLimitLayout"
+        app:layout_constraintTop_toBottomOf="@id/searchMultiSpinnerUnlimitedLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/selector_background"
+        android:layout_margin="16dp"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.bytcode.lib.spinner.multiselectspinner.spinners.MultiSpinnerSearch
+            android:id="@+id/searchMultiSpinnerLimit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginEnd="40dp"
+            android:layout_marginRight="40dp"
+            android:background="@android:color/transparent"
+            app:hintText="Multi Selection With Filter And Limit"
+            android:gravity="center"
+            android:spinnerMode="dialog"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="end"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:contentDescription="@null"
+            app:srcCompat="@drawable/ic_angle_down"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/searchSingleSpinnerLayout"
+        app:layout_constraintTop_toBottomOf="@id/searchMultiSpinnerLimitLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/selector_background"
+        android:layout_margin="16dp"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.bytcode.lib.spinner.multiselectspinner.spinners.SingleSpinnerSearch
+            android:id="@+id/searchSingleSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginEnd="40dp"
+            android:layout_marginRight="40dp"
+            android:background="@android:color/transparent"
+            app:hintText="Single Selection With Filter"
+            android:gravity="center"
+            android:spinnerMode="dialog"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="end"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:contentDescription="@null"
+            app:srcCompat="@drawable/ic_angle_down"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/singleSpinnerLayout"
+        app:layout_constraintTop_toBottomOf="@id/searchSingleSpinnerLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/selector_background"
+        android:layout_margin="16dp"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.bytcode.lib.spinner.multiselectspinner.spinners.SingleSpinner
+            android:id="@+id/singleSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginEnd="40dp"
+            android:layout_marginRight="40dp"
+            android:background="@android:color/transparent"
+            app:hintText="Single Selection"
+            android:gravity="center"
+            android:spinnerMode="dialog"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="end"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:contentDescription="@null"
+            app:srcCompat="@drawable/ic_angle_down"/>
+
+    </RelativeLayout>
 
 
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>

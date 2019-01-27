@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Multiple Filter</string>
+    <string name="app_name">Multi Selection Spinner</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
     <string name="type_to_search">Type to Search</string>
@@ -52,6 +52,5 @@
         <item>Hockey 5</item>
         <item>Swimming 5</item>
     </string-array>
-
 
 </resources>

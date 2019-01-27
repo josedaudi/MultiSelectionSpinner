@@ -1,4 +1,4 @@
-package com.bytcode.sample;
+package com.bytcode.sample.controllers.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +10,7 @@ import com.bytcode.lib.spinner.multiselectspinner.spinners.MultiSpinnerSearch;
 import com.bytcode.lib.spinner.multiselectspinner.spinners.SingleSpinner;
 import com.bytcode.lib.spinner.multiselectspinner.spinners.SingleSpinnerSearch;
 import com.bytcode.lib.spinner.multiselectspinner.interfaces.SpinnerListener;
+import com.bytcode.sample.R;
 
 import java.util.ArrayList;
 import java.util.Arrays;
